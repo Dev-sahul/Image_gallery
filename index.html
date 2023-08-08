@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My image Gallery</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  </head>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+    background: rgb(126, 49, 21);
+
+  }
+  
+   
+
+
+
+.modal {
+  position: fixed;
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+} 
+.close {
+  color: #ccc;
+  position: absolute;
+  
+  top: 0px;
+  
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.container{
+  height: 100%;
+  padding: 2rem;
+}
+form{
+      
+        width: 50%;
+        min-width: 500px;
+        margin:  auto;
+        height: 60px;
+        
+        display: flex;
+        align-items: center;
+        
+
+      }
+      
+      form input{
+        flex: 1;
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: .5rem;
+  align-content: center;
+  padding-left: 2rem;
+  font-size: 2rem;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+form button{
+        padding: 0 1.3rem;
+        height: 100%;
+        background: teal;
+        color: #fff;
+        font-size: 1.6rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: 3rem;
+    }
+    ::placeholder{
+      color:teal;
+      
+    }
+   .crossid{
+    cursor: pointer;
+    right: 0;
+    font-size: 1.5rem;
+   }
+
+  
+.gallery {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.gallery .images {
+  gap: 15px;
+  max-width: 95%;
+  margin-top: 40px;
+  columns: 5 340px;
+  list-style: none;
+}
+.gallery .images .card {
+  display: flex;
+  
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+.gallery .images img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.images .details {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  transition: bottom 0.1s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.images li:hover .details {
+  bottom: 0;
+}
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.photographer span {
+  font-size: 1.05rem;
+}
+button, i {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.details button {
+  background: #fff;
+  font-size: 1.1rem;
+  padding: 3px 8px;
+}
+.details .download-btn:hover {
+  background: #f2f2f2;
+}
+.btn {
+ padding: 0.3rem 0.5rem;
+  display: block;
+  margin: auto;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 40px;
+  text-align: center;
+  background: teal;
+  border-radius: 10px;
+  
+}
+ 
+</style>
+<body>
+  <div class="container">
+<form action="search-form"  id="search-form">
+  <input type="text" name="text" id="search-field" placeholder="search">
+  <button>enter</button>
+</form>
+    <div class="gallery">
+      <div class="images">
+
+        <li class="card">
+          <!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" >&times;</span>
+  <img id="previewImage" class="modal-content" src="" alt="Preview">
+</div>
+            <div class="details">
+              <div class="photographer">
+                <i class="uil uil-camera"></i>
+                <span>kishor</span>
+              </div>
+              <button>
+                <i class="uil uil-import"></i>
+              </button>
+            </div>
+          </li>
+        </div>
+    </div>
+    <button class="btn" >Load more</button>
+    Sgq75ywuoergGne52phlMEx5nOFJTQGknxeYdf79pP0
+  </div>
+     <script src="./index.js"></script>
+</body>
+</html>
